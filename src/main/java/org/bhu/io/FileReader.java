@@ -28,7 +28,7 @@ public class FileReader {
 	/**
 	 * 
 	 * @param path
-	 *            
+	 *            文本的绝对路径 编码默认为UTF-8
 	 */
 	public FileReader(String path) {
 		init(path);
@@ -63,9 +63,9 @@ public class FileReader {
 	/**
 	 * 
 	 * @param path
-	 *            鏂囨湰鐨勭粷瀵硅矾寰�
+	 *            文本的绝对路径
 	 * @param encoding
-	 *            鏂囨湰鐨勫瓧绗︾紪鐮�
+	 *            文本的字符编码
 	 */
 
 
@@ -75,9 +75,9 @@ public class FileReader {
 	
 
 	/**
-	 * 鎸夎璇诲彇鏂囨湰
+	 * 按行读取文本
 	 * 
-	 * @return 杩斿洖涓�琛�
+	 * @return 返回一行
 	 */
 	public String readLine() {
 		try {
@@ -90,9 +90,9 @@ public class FileReader {
 	}
 
 	/**
-	 * FileReader璇诲彇涓�涓枃鏈殑鎵�鏈夊唴瀹�
+	 * FileReader读取一个文本的所有内容
 	 * 
-	 * @return 杩斿洖涓�琛�
+	 * @return 返回一行
 	 */
 	public String read2End() {
 		Long filelength = this.file.length();
@@ -116,9 +116,9 @@ public class FileReader {
 	}
 
 	/**
-	 * FileReader璇诲彇宸插垎濂借瘝涓旀棤鍒嗚瘝鏍囪鐨勬枃鏈�
+	 * FileReader读取已分好词且无分词标记的文本
 	 * 
-	 * @return 杩斿洖鍖呭惈鏂囨湰鎵�鏈夎瘝鐨凩ist锛屽彲浠ユ湁閲嶅鍊�
+	 * @return 返回包含文本所有词的List，可以有重复值
 	 */
 	public List<String> readWordSet() {
 		List<String> wordset = new ArrayList<>();
@@ -139,8 +139,8 @@ public class FileReader {
 
 	/***
 	 * 
-	 * 鏂囨湰鐨勭粷瀵硅矾寰�
-	 * @return 杩斿洖鏂囨湰鎵�鏈夎鐨勯泦鍚圠ist
+	 * 文本的绝对路径
+	 * @return 返回文本所有行的集合List
 	 */
 	public List<String> read2List() {
 		List<String> list = new ArrayList<>();
@@ -263,7 +263,7 @@ public class FileReader {
 
 	
 	/**
-	 * 杩斿洖鏂囨。鍚�
+	 * 返回文档名
 	 * @return
 	 */
 	public String getFileName(){
@@ -271,7 +271,7 @@ public class FileReader {
 	}
 	
 	/**
-	 * 杩斿洖鏂囨。鐨勭粷瀵硅矾寰�
+	 * 返回文档的绝对路径
 	 * @return
 	 */
 	public String getAbsolutePath(){

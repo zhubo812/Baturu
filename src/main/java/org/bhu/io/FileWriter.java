@@ -39,8 +39,8 @@ public class FileWriter{
 	}
 	 
 	/**
-	 * 按行写出，换行符为�?�\n�?
-	 * @param line 待写出的字符�?
+	 * 按行写出，换行符为�?�\n�?
+	 * @param line 待写出的字符�?
 	 */
 	public void writeLine(String line){
 		try {
@@ -67,9 +67,8 @@ public class FileWriter{
 	}
 	
 	/**
-	 * 按行写出，换行符为�?�\r\n�?
-	 * @param line 待写出的字符�?
-	 * @param flag 是否使用“\r\n”换行符
+	 * 按行写出，换行符为“\n”
+	 * @param line 待写出的字符串
 	 */
 	public void writeLine(String line, boolean flag){
 		try {
@@ -81,7 +80,7 @@ public class FileWriter{
 	
 	/**
 	 * 写入文本
-	 * @param line 待写出的字符�?
+	 * @param line 待写出的字符串
 	 */
 	public void write(String line){
 		try {
@@ -117,12 +116,12 @@ public class FileWriter{
 	
 	/**
 	 * 向文本追加字符串
-	 * @param str 待追加的字符�?
+	 * @param str 待追加的字符串
 	 */
 	public void appendLine2File(String str) {
 		OutputStreamWriter osw;
 		try {
-			// 同时创建新文�?
+			// 同时创建新文本
 			osw = new OutputStreamWriter(new FileOutputStream(this.path, true),
 					this.encoding);
 			osw.write(String.format("%s\n", str));
@@ -134,13 +133,13 @@ public class FileWriter{
 	}
 	
 	/***
-	 * 向文本追加多行字符串,List中的每一个元素即�?行文�?
+	 * 向文本追加多行字符串,List中的每一个元素即一行文本文
 	 * @param list 存放待追加文本的列表
 	 */
 	public static void appendList2File(String path, List<String> list) {
 		OutputStreamWriter osw;
 		try {
-			// 同时创建新文�?
+			// 同时创建新文本
 			osw = new OutputStreamWriter(new FileOutputStream(path, true),
 					"utf-8");
 			for(String t : list){
@@ -156,12 +155,12 @@ public class FileWriter{
 	/**
 	 * 向文本追加多行字符串，并指定输入路径
 	 * @param path 文本输出路径
-	 * @param str 待追加的字符�?
+	 * @param str 待追加的字符串
 	 */
 	public void appendLine2File(String path, String str) {
 		OutputStreamWriter osw;
 		try {
-			// 同时创建新文�?
+			// 同时创建新文本
 			osw = new OutputStreamWriter(new FileOutputStream(path, true),
 					this.encoding);
 			osw.write(String.format("%s\n", str));
@@ -176,7 +175,7 @@ public class FileWriter{
 	public static void appendLine2File(String path, String str, String encoding) {
 		OutputStreamWriter osw;
 		try {
-			// 同时创建新文�?
+			// 同时创建新文本
 			osw = new OutputStreamWriter(new FileOutputStream(path, true),
 					encoding);
 			osw.write(String.format("%s\n", str));
@@ -220,7 +219,7 @@ public class FileWriter{
 
 	/**
 	 * 按照字符串的HashCode输入到文本中
-	 * @param line 待输出的字符�?
+	 * @param line 待输出的字符串
 	 * @param PathCode 字符串的hashcode
 	 */
 	public void outPutwithHashCode(String line,
