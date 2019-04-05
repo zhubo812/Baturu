@@ -3,85 +3,52 @@ package org.bhu.nlp.utils;
 import java.util.*;
 
 /**
- * ÓÃ¹Ì¶¨ÈİÁ¿µÄÓÅÏÈ¶ÓÁĞÄ£ÄâµÄ×î´ó¶Ñ£¬ÓÃÓÚ½â¾öÇótopN´óµÄÎÊÌâ
+ * ï¿½Ã¹Ì¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¶ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½ï¿½topNï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *
  * @author hankcs
  */
-public class MaxHeap<E>
-{
-    /**
-     * ÓÅÏÈ¶ÓÁĞ
-     */
-    private PriorityQueue<E> queue;
-    /**
-     * ¶ÑµÄ×î´óÈİÁ¿
-     */
-    private int maxSize;
+public class MaxHeap<E> {
 
-    /**
-     * ¹¹Ôì×î´ó¶Ñ
-     * @param maxSize ±£Áô¶àÉÙ¸öÔªËØ
-     * @param comparator ±È½ÏÆ÷£¬Éú³É×î´ó¶ÑÊ¹ÓÃo1-o2£¬Éú³É×îĞ¡¶ÑÊ¹ÓÃo2-o1£¬²¢ĞŞ¸Ä e.compareTo(peek) ±È½Ï¹æÔò
-     */
-    public MaxHeap(int maxSize, Comparator<E> comparator)
-    {
-        if (maxSize <= 0)
-            throw new IllegalArgumentException();
-        this.maxSize = maxSize;
-        this.queue = new PriorityQueue<E>(maxSize, comparator);
-    }
+	private PriorityQueue<E> queue;
 
-    /**
-     * Ìí¼ÓÒ»¸öÔªËØ
-     * @param e ÔªËØ
-     * @return ÊÇ·ñÌí¼Ó³É¹¦
-     */
-    public boolean add(E e)
-    {
-        if (queue.size() < maxSize)
-        { // Î´´ïµ½×î´óÈİÁ¿£¬Ö±½ÓÌí¼Ó
-            queue.add(e);
-            return true;
-        }
-        else
-        { // ¶ÓÁĞÒÑÂú
-            E peek = queue.peek();
-            if (queue.comparator().compare(e, peek) > 0)
-            { // ½«ĞÂÔªËØÓëµ±Ç°¶Ñ¶¥ÔªËØ±È½Ï£¬±£Áô½ÏĞ¡µÄÔªËØ
-                queue.poll();
-                queue.add(e);
-                return true;
-            }
-        }
-        return false;
-    }
+	private int maxSize;
 
-    /**
-     * Ìí¼ÓĞí¶àÔªËØ
-     * @param collection
-     */
-    public MaxHeap<E> addAll(Collection<E> collection)
-    {
-        for (E e : collection)
-        {
-            add(e);
-        }
+	public MaxHeap(int maxSize, Comparator<E> comparator) {
+		if (maxSize <= 0)
+			throw new IllegalArgumentException();
+		this.maxSize = maxSize;
+		this.queue = new PriorityQueue<E>(maxSize, comparator);
+	}
 
-        return this;
-    }
+	public boolean add(E e) {
+		if (queue.size() < maxSize) {
+			queue.add(e);
+			return true;
+		} else {
+			E peek = queue.peek();
+			if (queue.comparator().compare(e, peek) > 0) {
+				queue.poll();
+				queue.add(e);
+				return true;
+			}
+		}
+		return false;
+	}
 
-    /**
-     * ×ªÎªÓĞĞòÁĞ±í£¬×Ô»ÙĞÔ²Ù×÷
-     * @return
-     */
-    public List<E> toList()
-    {
-        ArrayList<E> list = new ArrayList<E>(queue.size());
-        while (!queue.isEmpty())
-        {
-            list.add(0, queue.poll());
-        }
+	public MaxHeap<E> addAll(Collection<E> collection) {
+		for (E e : collection) {
+			add(e);
+		}
 
-        return list;
-    }
+		return this;
+	}
+
+	public List<E> toList() {
+		ArrayList<E> list = new ArrayList<E>(queue.size());
+		while (!queue.isEmpty()) {
+			list.add(0, queue.poll());
+		}
+
+		return list;
+	}
 }
