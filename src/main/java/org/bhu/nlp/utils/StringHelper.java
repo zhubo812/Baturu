@@ -78,7 +78,7 @@ public class StringHelper {
 	}
 	
 	public static List<String> getWords(String segmentDoc){
-		List<String> words = new ArrayList<>();
+		List<String> words = new ArrayList<String>();
 		String[] items = StringUtils.split(segmentDoc);
 		for(String item : items){
 			words.add(getWord(item));
