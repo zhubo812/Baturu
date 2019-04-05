@@ -121,7 +121,7 @@ public class FileReader {
 	 * @return 返回包含文本所有词的List，可以有重复值
 	 */
 	public List<String> readWordSet() {
-		List<String> wordset = new ArrayList<>();
+		List<String> wordset = new ArrayList<String>();
 		try {
 			for (; (line = reader.readLine()) != null;) {
 				line = line.concat(line);
@@ -143,7 +143,7 @@ public class FileReader {
 	 * @return 返回文本所有行的集合List
 	 */
 	public List<String> read2List() {
-		List<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<String>();
 
 				try {
 					for (String line; (line = reader.readLine()) != null;) {
