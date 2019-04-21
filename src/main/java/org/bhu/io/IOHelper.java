@@ -5,8 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class IOHelper {
 
@@ -27,8 +25,7 @@ public class IOHelper {
 	/**
 	 * 删除空目录
 	 * 
-	 * @param dir
-	 *            将要删除的目录路径
+	 * @param dir 将要删除的目录路径        
 	 */
 	public static void doDeleteEmptyDir(String dir) {
 		boolean success = (new File(dir)).delete();
@@ -64,8 +61,7 @@ public class IOHelper {
 	/**
 	 * 递归删除目录下的所有文件及子目录下所有文件
 	 * 
-	 * @param dir
-	 *            将要删除的文件目录
+	 * @param dir 将要删除的文件目录
 	 * @return boolean Returns "true" if all deletions were successful. If a
 	 *         deletion fails, the method stops attempting to delete and returns
 	 *         "false".

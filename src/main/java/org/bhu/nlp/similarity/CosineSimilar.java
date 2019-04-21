@@ -28,9 +28,9 @@ public class CosineSimilar {
 	 * 适用于利用词集（多个词）查找与其相似的句子， wordset中每个元素表示词集中各个词连成的字符串 sentences中每个元素是一个句子
 	 * outPath表示结果输出的路径
 	 * 
-	 * @param wordset
-	 * @param sentences
-	 * @throws IOException
+	 * @param wordset 词集合
+	 * @param sentences 句子结合
+	 * @param outPath 输出路径
 	 */
 	public void getSetSimilarity(List<String> wordset, List<String> sentences,
 			String outPath) {
@@ -54,15 +54,15 @@ public class CosineSimilar {
 
 	/**
 	 *    计算两个词集的相似度
-	 * @param arg0
-	 * @param arg1
+	 * @param words1 词集1
+	 * @param words2 词集2
 	 * @return
 	 */
-	public Double getSimilarityByWord(List<String> arg0, List<String> arg1){
+	public Double getSimilarityByWord(List<String> words1, List<String> words2){
 		Map<Integer, int[]> AlgorithmMap = new HashMap<Integer, int[]>();
 
 		// 将两个字符串中的中文字符以及出现的总数封装到，AlgorithmMap中
-		for (String word : arg0) {
+		for (String word : words1) {
 				int wordIndex = getID(word);
 				if (wordIndex != -1) {
 					int[] fq = AlgorithmMap.get(wordIndex);
@@ -78,7 +78,7 @@ public class CosineSimilar {
 			}
 		
 		
-		for (String word : arg1) {
+		for (String word : words2) {
 			int wordIndex = getID(word);
 			if (wordIndex != -1) {
 				int[] fq = AlgorithmMap.get(wordIndex);
@@ -188,8 +188,7 @@ public class CosineSimilar {
 	/**
 	 * 根据输入的Unicode字符，获取它的GB2312编码或者ascii编码，
 	 * 
-	 * @param ch
-	 *            输入的GB2312中文字符或者ASCII字符(128个)
+	 * @param ch 输入的GB2312中文字符或者ASCII字符(128个)
 	 * @return ch在GB2312中的位置，-1表示该字符不认识
 	 */
 	public static short getGB2312Id(char ch) {
@@ -212,11 +211,9 @@ public class CosineSimilar {
 	 * 
 	 * @Title: calculateCos
 	 * @Description: 计算余弦相似性
-	 * @param @param first
-	 * @param @param second
-	 * @param @return
-	 * @return Double
-	 * @throws
+	 * @param  first 集合1
+	 * @param  second 集合2
+	 * @return Double 返回相似度
 	 */
 	@SuppressWarnings("unused")
 	private Double calculateCos(LinkedHashMap<String, Integer> first,
