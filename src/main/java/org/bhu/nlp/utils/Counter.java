@@ -112,7 +112,7 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 批量增加
 	 * 
-	 * @param Collection<T> 词的集合
+	 * @param collection 词的集合
 	 */
 	public void addAll(Collection<T> collection) {
 		for (T t : collection) {
@@ -122,7 +122,8 @@ public class Counter<T> implements Serializable {
 
 	/**
 	 * 批量增加
-	 * 
+	 * @param collection 待添加元素集合
+	 * @param weight 元素值
 	 */
 	public void addAll(Collection<T> collection, double weight) {
 		for (T t : collection) {
@@ -132,7 +133,7 @@ public class Counter<T> implements Serializable {
 
 	/**
 	 * 批量增加
-	 * 
+	 * @param map 待添加元素集合
 	 */
 	public void addAll(Map<T, Double> map) {
 		for (Entry<T, Double> e : map.entrySet()) {

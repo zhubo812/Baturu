@@ -2,11 +2,7 @@ package org.bhu.nlp.utils;
 
 import java.util.*;
 
-/**
- * �ù̶����������ȶ���ģ������ѣ����ڽ����topN�������
- *
- * @author hankcs
- */
+
 public class MaxHeap<E> {
 
 	private PriorityQueue<E> queue;

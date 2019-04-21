@@ -188,11 +188,6 @@ public class FileWriter{
 		}
 	}
 
-	/***
-	 * 
-	 * @param hm 待输出的Map
-	 * 
-	 */
 	public <K, V> void writeMap(Map<K, V> hm){
 		Iterator<Entry<K, V>> iterator = hm.entrySet().iterator();
 		FileOutputStream fos = null;

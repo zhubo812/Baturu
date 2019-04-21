@@ -26,7 +26,7 @@ public class FileUtil {
 	/**
 	 * 返回一个文件夹下所有文件，包括子文件夹中的文件
 	 * @param inPath 待处理文件夹的路径
-	 * @return List Files
+	 * @return 文本集合
 	 */
 	public static List<String> getAllFiles(String inPath) {
 		List<String> fileList = new ArrayList<String>();
@@ -44,8 +44,7 @@ public class FileUtil {
 	/**
 	 * 获取文件夹下的文件并加入List
 	 * @param path  待处理文件夹的路径
-	 * @param list 储存文件的列表
-	 * return void
+	 * @param collection 储存文件的列表
 	 */
 	private static void getFile(String path, Collection<String> collection) {
 		File file = new File(path);
@@ -75,7 +74,6 @@ public class FileUtil {
 	/**
 	 * 删除指定文件夹下所有文件
 	 * @param path 文件夹完整绝对路径
-	 * return void
 	 */
 	public static void deleteFiles(String path) {
 		File file = new File(path);
@@ -111,7 +109,6 @@ public class FileUtil {
 	/**
 	 * 删除文件夹
 	 * @param folderPath 文件夹完整绝对路径
-	 * return void
 	 */
 	private static void delFolder(String folderPath) {
 		try {
@@ -126,9 +123,9 @@ public class FileUtil {
 	}
 	
 	/**
-	 * 返回文件内容的总行数。 
+	 * 
 	 * @param file 待计数的文本的File对象
-	 * @return int line number
+	 * @return 返回文件内容的总行数。 
 	 */
     public static int getTotalLines(File file){
         int lines = 0;
@@ -158,7 +155,7 @@ public class FileUtil {
     /***
      * 返回分词行的所有分词单位数组
      * @param line 待处理的分词后的字符串行
-     * @return String[] word/cate
+     * @return  word/cate
      */
     public String[] getWords(String line){
 		String[] array = null;
@@ -178,9 +175,9 @@ public class FileUtil {
 	
 
 	/***
-	 * 返回姓氏概率HASH
-	 * @param reader
-	 * @return
+	 * 
+	 * @param reader 输入BufferedReader
+	 * @return 返回姓氏概率HASH
 	 */
 	public static Hashtable<String, Double> getNameProHash(BufferedReader reader){
 		Hashtable<String, Double> hash = new Hashtable<String, Double>();
@@ -222,10 +219,10 @@ public class FileUtil {
 	}
 	
 	/***
-	 * 判断输入输出路径是否相同
-	 * @param inFile
-	 * @param outFile
-	 * @return
+	 * 
+	 * @param inFile 输入文本路径
+	 * @param outFile 输出文本路径
+	 * @return 判断输入输出路径是否相同的结果
 	 */
 	public static boolean checkPath(String inFile, String outFile) {
 		if (inFile.trim() == outFile.trim())
@@ -303,10 +300,10 @@ public class FileUtil {
 	
 
 	/**
-	 * 获取编码，默认返回GBK
 	 * 
-	 * @param filePath
-	 * @return code
+	 * 
+	 * @param filePath 输入文本路径
+	 * @return 获取编码，默认返回GBK
 	 * @throws IOException
 	 */
 	public static String getFileChart(String filePath) throws IOException {
@@ -330,13 +327,7 @@ public class FileUtil {
 	protected int getWordsNum(String line){
 		return StringUtils.split(line).length;
 	}
-	
-//	protected int getWordsNum(List<Token> items){
-//		return items.size();
-//	}
-//	
-	
-	//载入词典set
+
 	public static Set<String> getSourceDicSet(String dicName){
 		Set<String> set = new HashSet<String>();
 		BufferedReader reader = getSourceReader(dicName);

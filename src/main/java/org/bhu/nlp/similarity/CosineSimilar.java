@@ -53,10 +53,10 @@ public class CosineSimilar {
 
 
 	/**
-	 *    计算两个词集的相似度
+	 *    
 	 * @param words1 词集1
 	 * @param words2 词集2
-	 * @return
+	 * @return 计算两个词集的相似度
 	 */
 	public Double getSimilarityByWord(List<String> words1, List<String> words2){
 		Map<Integer, int[]> AlgorithmMap = new HashMap<Integer, int[]>();
