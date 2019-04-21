@@ -113,9 +113,6 @@ public class TimeHelper {
 	/**
 	 * 返回星期几
 	 * 
-	 * @param pTime
-	 * @return
-	 * @throws Exception
 	 */
 	public int dayForWeek(Date date) {
 		Calendar c = Calendar.getInstance();
@@ -148,7 +145,7 @@ public class TimeHelper {
 	/**
 	 * 获取系统当前日期
 	 * 
-	 * @return
+	 * @return 返回系统当前日期
 	 */
 	public String getDateStr(long time) {
 		return format.format(time);
@@ -162,7 +159,7 @@ public class TimeHelper {
 	 * 获取给定日期前一天的日期
 	 * 
 	 * @param currentDate
-	 * @return
+	 * @return 返回给定日期前一天的日期
 	 */
 	public Date getLastOneDate(String currentDate) {
 		Calendar cd = Calendar.getInstance();

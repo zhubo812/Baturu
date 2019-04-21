@@ -39,8 +39,8 @@ public class FileWriter{
 	}
 	 
 	/**
-	 * 按行写出，换行符为�?�\n�?
-	 * @param line 待写出的字符�?
+	 * 按行写出，换行符为\n
+	 * @param line 待写出的字符\n
 	 */
 	public void writeLine(String line){
 		try {

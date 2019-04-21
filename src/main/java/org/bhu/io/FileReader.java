@@ -60,14 +60,7 @@ public class FileReader {
 		}
 	}
 	
-	/**
-	 * 
-	 * @param path
-	 *            文本的绝对路径
-	 * @param encoding
-	 *            文本的字符编码
-	 */
-
+	
 
 	public FileReader(InputStream inputStream) {
 		getReader(inputStream);
@@ -271,8 +264,8 @@ public class FileReader {
 	}
 	
 	/**
-	 * 返回文档的绝对路径
-	 * @return
+	 * 
+	 * @return 返回文档的绝对路径
 	 */
 	public String getAbsolutePath(){
 		return this.file.getAbsolutePath();
