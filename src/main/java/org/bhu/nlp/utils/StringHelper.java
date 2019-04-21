@@ -97,6 +97,7 @@ public class StringHelper {
      * 半角字符--全角字符转换    
      * 只处理空格，!到˜之间的字符，忽略其他  
      * @param src 待处理字符串 
+     * @return src 处理结果字符串
      */    
     public static String bj2qj(String src) {    
         if (src == null) {    
@@ -120,6 +121,7 @@ public class StringHelper {
      * 全角字符--半角字符转换    
      * 只处理全角的空格，全角！到全角～之间的字符，忽略其他 
      * @param src 待处理字符串 
+     * @return src 处理结果字符串
      */    
     public static String qj2bj(String src) {    
         if (src == null) {    
