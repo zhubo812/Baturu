@@ -38,11 +38,11 @@ public class TextRankKeyword {
 	/**
 	 * 提取关键词
 	 * 
-	 * @param document
-	 *            文档内容
-	 * @param size
-	 *            希望提取几个关键词
-	 * @return 一个列表
+	 * @param words 文档内容
+	 *            
+	 * @param size 希望提取几个关键词
+	 *            
+	 * @return 关键词列表
 	 */
 	public List<String> getKeywordList(List<String> words, int size) {
 		TextRankKeyword textRankKeyword = new TextRankKeyword();
@@ -54,8 +54,8 @@ public class TextRankKeyword {
 	/**
 	 * 提取关键词
 	 * 
-	 * @param content
-	 * @return
+	 * @param words 待处理文本的词集
+	 * @return 关键词结果
 	 */
 	private List<String> getKeyword(List<String> words) {
 		Set<Map.Entry<String, Float>> entrySet = getTermAndRank(words, nKeyword).entrySet();
@@ -71,9 +71,9 @@ public class TextRankKeyword {
 	/**
 	 * 返回分数最高的前size个分词结果和对应的rank
 	 * 
-	 * @param content
-	 * @param size
-	 * @return
+	 * @param words 待处理文本的词集
+	 * @param size 关键词个数
+	 * @return 关键词列表
 	 */
 	private Map<String, Float> getTermAndRank(List<String> words, Integer size) {
 		Map<String, Float> map = getRank(words);
@@ -94,8 +94,8 @@ public class TextRankKeyword {
 	/**
 	 * 使用已经分好的词来计算rank
 	 * 
-	 * @param termList
-	 * @return
+	 * @param wordList 待处理文本的词集
+	 * @return rank值
 	 */
 	private Map<String, Float> getRank(List<String> wordList) {
 		// System.out.println(wordList);

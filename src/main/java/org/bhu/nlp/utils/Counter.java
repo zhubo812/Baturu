@@ -10,8 +10,8 @@ import java.util.Map.Entry;
 /**
  * 用map做的计数器.
  * 
- * @param <T>
- * @author ansj
+ * @param <T> 泛型
+ * @author Jackie
  */
 public class Counter<T> implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -32,8 +32,8 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 增加一个元素
 	 * 
-	 * @param t
-	 * @param n
+	 * @param t 词或其他统计单位
+	 * @param n 频次
 	 */
 	public void add(T t, double n) {
 		Double value = null;
@@ -47,8 +47,8 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 兼容旧的api
 	 * 
-	 * @param t
-	 * @param n
+	 * @param t 词或其他统计单位
+	 * @param n 频次
 	 */
 	public void add(T t, int n) {
 		add(t, (double) n);
@@ -57,7 +57,7 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 计数增加.默认为1
 	 * 
-	 * @param t
+	 * @param t 词或其他统计单位
 	 */
 	public void add(T t) {
 		this.add(t, 1);
@@ -66,7 +66,7 @@ public class Counter<T> implements Serializable {
 	/**
 	 * map的大小
 	 * 
-	 * @return
+	 * @return 统计词的数量
 	 */
 	public int size() {
 		return hm.size();
@@ -75,7 +75,7 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 删除一个元素
 	 * 
-	 * @param t
+	 * @param t 词或其他统计单位
 	 */
 	public void remove(T t) {
 		hm.remove(t);
@@ -84,7 +84,7 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 得道内部的map
 	 * 
-	 * @return
+	 * @return 返回存储容器
 	 */
 	public HashMap<T, Double> get() {
 		return this.hm;
@@ -93,7 +93,7 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 将map序列化为词典格式
 	 * 
-	 * @return
+	 * @return 返回词典
 	 */
 	public String getDic() {
 		Iterator<Entry<T, Double>> iterator = this.hm.entrySet().iterator();
@@ -112,7 +112,7 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 批量增加
 	 * 
-	 * @param hs
+	 * @param Collection<T> 词的集合
 	 */
 	public void addAll(Collection<T> collection) {
 		for (T t : collection) {
@@ -123,7 +123,6 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 批量增加
 	 * 
-	 * @param hs
 	 */
 	public void addAll(Collection<T> collection, double weight) {
 		for (T t : collection) {
@@ -134,7 +133,6 @@ public class Counter<T> implements Serializable {
 	/**
 	 * 批量增加
 	 * 
-	 * @param hs
 	 */
 	public void addAll(Map<T, Double> map) {
 		for (Entry<T, Double> e : map.entrySet()) {

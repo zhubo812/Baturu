@@ -93,11 +93,9 @@ public class StringHelper {
 	}
 	
 	
-	/**  
-     * <PRE>  
-     * 半角字符->全角字符转换    
+	/**
+     * 半角字符--全角字符转换    
      * 只处理空格，!到˜之间的字符，忽略其他  
-     * </PRE>  
      */    
     public static String bj2qj(String src) {    
         if (src == null) {    
@@ -117,11 +115,9 @@ public class StringHelper {
         return buf.toString();    
     }    
     
-    /**  
-     * <PRE>  
-     * 全角字符->半角字符转换    
+    /**   
+     * 全角字符--半角字符转换    
      * 只处理全角的空格，全角！到全角～之间的字符，忽略其他  
-     * </PRE>  
      */    
     public static String qj2bj(String src) {    
         if (src == null) {    
