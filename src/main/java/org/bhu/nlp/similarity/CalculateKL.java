@@ -53,7 +53,7 @@ public class CalculateKL {
 	/********
 	 * this function read in a string from disk file*
 	 * @throws FileNotFoundException
-	 * @param 输入文件路径
+	 * @param path 输入文件路径
 	 * @return 本文数据流
 	 ***/
 
@@ -80,7 +80,7 @@ public class CalculateKL {
 	/**
 	 * 
 	 * @param path 输入文本路径
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException，IOException
 	 * @return 返回过滤后的文本
 	 */
 	public String CutTextSingleCharacter(String path)

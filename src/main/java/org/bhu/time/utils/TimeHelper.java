@@ -145,7 +145,7 @@ public class TimeHelper {
 
 	/**
 	 * 获取系统当前日期
-	 * @param 时间戳
+	 * @param time 时间戳
 	 * @return 返回系统当前日期
 	 */
 	public String getDateStr(long time) {

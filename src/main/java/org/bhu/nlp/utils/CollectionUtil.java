@@ -8,7 +8,8 @@ import java.util.*;
 public class CollectionUtil {
 	/**
 	 * map 按照value排序
-	 *
+	 * @param map 待排序map
+	 * @param sort 排序指标
 	 * @return 排序后的结果
 	 */
 	public static <K, V> List<Map.Entry<K, V>> sortMapByValue(Map<K, V> map, final int sort) {
@@ -25,6 +26,7 @@ public class CollectionUtil {
 
 	 /**
      * 对List对象按照某个成员变量进行排序
+     * @param <T> 输入的泛型
      * @param list       List对象
      * @param sortField  排序的属性名称
      * @param sortMode   排序方式：ASC，DESC 任选其一
