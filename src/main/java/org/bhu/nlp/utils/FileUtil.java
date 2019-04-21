@@ -304,7 +304,7 @@ public class FileUtil {
 	 * 
 	 * @param filePath 输入文本路径
 	 * @return 获取编码，默认返回GBK
-	 * @throws IOException
+	 * @throws IOException io错误
 	 */
 	public static String getFileChart(String filePath) throws IOException {
 		String code = "GBK";

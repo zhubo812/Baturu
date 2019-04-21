@@ -10,6 +10,8 @@ public class CollectionUtil {
 	 * map 按照value排序
 	 * @param map 待排序map
 	 * @param sort 排序指标
+	 * @param <K> map中key的类型
+	 * @param <V> map中value的类型
 	 * @return 排序后的结果
 	 */
 	public static <K, V> List<Map.Entry<K, V>> sortMapByValue(Map<K, V> map, final int sort) {
