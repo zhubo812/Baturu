@@ -111,7 +111,7 @@ public class TimeHelper {
 	}
 
 	/**
-	 * 返回星期几
+	 * @return 返回星期几
 	 * 
 	 */
 	public int dayForWeek(Date date) {
@@ -158,7 +158,7 @@ public class TimeHelper {
 	/**
 	 * 获取给定日期前一天的日期
 	 * 
-	 * @param currentDate
+	 * @param currentDate 输入日期
 	 * @return 返回给定日期前一天的日期
 	 */
 	public Date getLastOneDate(String currentDate) {

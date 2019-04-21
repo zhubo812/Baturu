@@ -67,8 +67,9 @@ public class FileWriter{
 	}
 	
 	/**
-	 * 按行写出，换行符为“\n”
+	 * 按行写出，换行符为“\r\n”
 	 * @param line 待写出的字符串
+	 * @param flag 是否用\r\n作为换行符
 	 */
 	public void writeLine(String line, boolean flag){
 		try {
@@ -134,6 +135,7 @@ public class FileWriter{
 	
 	/***
 	 * 向文本追加多行字符串,List中的每一个元素即一行文本文
+	 * @param path 待追加文本的路径
 	 * @param list 存放待追加文本的列表
 	 */
 	public static void appendList2File(String path, List<String> list) {

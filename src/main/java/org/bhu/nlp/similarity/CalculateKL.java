@@ -28,7 +28,7 @@ public class CalculateKL {
 	 * 
 	 * @param arg0 待计算相对熵的文本1
 	 * @param arg1 待计算相对熵的文本2
-	 * @return
+	 * @return 返回相对熵值
 	 */
 	public double getRelativeEntropy(String arg0, String arg1){
 		ArrayList<Entity> enList1 = new ArrayList<Entity>();
@@ -76,8 +76,8 @@ public class CalculateKL {
 
 	/**
 	 * 
-	 * @param path
-	 * @return
+	 * @param path 输入文本路径
+	 * @return 返回过滤后的文本
 	 */
 	public String CutTextSingleCharacter(String path)
 			throws FileNotFoundException, IOException {

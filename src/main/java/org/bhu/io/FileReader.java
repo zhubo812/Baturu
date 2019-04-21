@@ -256,8 +256,8 @@ public class FileReader {
 
 	
 	/**
-	 * 返回文档名
-	 * @return
+	 * 
+	 * @return 返回文档名
 	 */
 	public String getFileName(){
 		return this.file.getName();
