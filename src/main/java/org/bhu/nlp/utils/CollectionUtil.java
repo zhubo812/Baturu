@@ -9,7 +9,7 @@ public class CollectionUtil {
 	/**
 	 * map 按照value排序
 	 *
-	 * @return
+	 * @return 排序后的结果
 	 */
 	public static <K, V> List<Map.Entry<K, V>> sortMapByValue(Map<K, V> map, final int sort) {
 		List<Map.Entry<K, V>> orderList = new ArrayList<Map.Entry<K, V>>(map.entrySet());
