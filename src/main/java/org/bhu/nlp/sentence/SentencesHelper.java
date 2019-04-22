@@ -1,4 +1,4 @@
-package org.bhu.nlp.utils;
+package org.bhu.nlp.sentence;
 
 import java.util.ArrayList;
 import java.util.List;
