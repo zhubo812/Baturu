@@ -1,4 +1,4 @@
-package org.bhu.nlp.utils;
+package org.bhu.nlp.utils.string;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +41,8 @@ public class StringHelper {
      */    
     static final char DBC_SPACE = ' '; // 半角空格    
     
+    private static int[] filter = new int[128];
+	private static int[] filterEnd = new int[128];
     
 	public static boolean isChinsesStr(String str) {
 		char[] ch = str.toCharArray();
@@ -139,5 +141,132 @@ public class StringHelper {
             }    
         }    
         return buf.toString();    
-    }    
+    }   
+    
+    /**
+	 * 判断是否为空格
+	 * @param chars 待判断的char[]数组
+	 * @return boolean
+	 */
+	public boolean isBlank(char[] chars) {
+		int strLen;
+		if (chars == null || (strLen = chars.length) == 0) {
+			return true;
+		}
+		for (int i = 0; i < strLen; i++) {
+			if (Character.isWhitespace(chars[i]) == false) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 * 判断是否为数字串
+	 * @param str 待判断的字符串
+	 * @return boolean
+	 */
+	public static boolean isNumeric(String str) {
+		for (int i = str.length(); --i >= 0;) {
+			if (!Character.isDigit(str.charAt(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 *判断是否包含数字
+	 * @param str 待判断的字符串
+	 * @return boolean
+	 */
+	public static boolean containsNumeric(String str) {
+		for (int i = str.length(); --i >= 0;) {
+			if (Character.isDigit(str.charAt(i))) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * 去除html标签
+	 * 
+	 * @param input 待处理的字符串文本
+	 * @return String
+	 */
+	public static String rmHtmlTag(String input) {
+		if (isBlank(input)) {
+			return "";
+		}
+		int length = input.length();
+		int tl = 0;
+		StringBuilder sb = new StringBuilder();
+		char c = 0;
+		for (int i = 0; i < length; i++) {
+			c = input.charAt(i);
+
+			if (c > 127) {
+				sb.append(c);
+				continue;
+			}
+
+			switch (filter[c]) {
+			case -1:
+				break;
+			case 0:
+				sb.append(c);
+				break;
+			case 1:
+				if (sb.length() > 0 && sb.charAt(sb.length() - 1) != c)
+					sb.append(c);
+				do {
+					i++;
+				} while (i < length && input.charAt(i) == c);
+
+				if (i < length || input.charAt(length - 1) != c)
+					i--;
+				break;
+			default:
+				tl = filter[c] + i;
+				int tempOff = i;
+				boolean flag = false;
+				char end = (char) filterEnd[c];
+				for (i++; i < length && i < tl; i++) {
+					c = input.charAt(i);
+					if (c > 127)
+						continue;
+					if (c == end) {
+						flag = true;
+						break;
+					}
+				}
+				if (!flag) {
+					i = tempOff;
+					sb.append(input.charAt(i));
+				}
+				break;
+			}
+		}
+		return sb.toString();
+	}
+	
+	/**
+	 * 判断字符串是否为空
+	 * 
+	 * @param cs 待判断的字符序列
+	 * @return boolean
+	 */
+	public static boolean isBlank(CharSequence cs) {
+		int strLen;
+		if (cs == null || (strLen = cs.length()) == 0) {
+			return true;
+		}
+		for (int i = 0; i < strLen; i++) {
+			if (Character.isWhitespace(cs.charAt(i)) == false) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

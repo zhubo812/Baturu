@@ -4,7 +4,7 @@
 
     <groupId>com.github.zhubo812</groupId>
     <artifactId>Baturu</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <build>
         <plugins>
             <plugin>
@@ -30,7 +30,7 @@
     </build>
     <packaging>jar</packaging>
 
-    <name>IO Library for NLP</name>
+    <name>Basic Tools for NLP</name>
     <description>This is a IO library for  NLP
     </description>
     <url>https://github.com/zhubo812/Baturu</url>
