@@ -155,6 +155,30 @@ public class TimeHelper {
 	public String getDateStr(Date date) {
 		return format.format(date).toString();
 	}
+	
+	public String getDateStrAfterOneDay(long time) {
+		Date cdate = timeStamp2Date(time);
+		Date date = GetAfterOneDate(cdate);
+		return getDateStr(date);
+	}
+	
+	public Date timeStamp2Date(long time) {
+		return new Date(time);
+	}
+
+	public String timeStamp2FromIso(long sdate) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(sdate);
+		cal.add(Calendar.HOUR, +8);
+		return format.format(cal.getTime());
+	}
+
+	public Date timeStamp2FromIsoDate(long sdate) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(sdate);
+		cal.add(Calendar.HOUR, +8);
+		return cal.getTime();
+	}
 
 	/**
 	 * 获取给定日期前一天的日期
@@ -303,23 +327,7 @@ public class TimeHelper {
 		return list;
 	}
 
-	public Date timeStamp2Date(long time) {
-		return new Date(time);
-	}
-
-	public String timeStamp2FromIso(long sdate) {
-		Calendar cal = Calendar.getInstance();
-		cal.setTimeInMillis(sdate);
-		cal.add(Calendar.HOUR, +8);
-		return format.format(cal.getTime());
-	}
-
-	public Date timeStamp2FromIsoDate(long sdate) {
-		Calendar cal = Calendar.getInstance();
-		cal.setTimeInMillis(sdate);
-		cal.add(Calendar.HOUR, +8);
-		return cal.getTime();
-	}
+	
 
 	@SuppressWarnings("deprecation")
 	public String DateGregorian(String srcdate) {
