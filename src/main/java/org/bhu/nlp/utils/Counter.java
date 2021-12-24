@@ -54,6 +54,10 @@ public class Counter<T> implements Serializable {
 		add(t, (double) n);
 	}
 
+	
+	public Double get(T t) {
+		return hm.get(t);
+	}
 	/**
 	 * 计数增加.默认为1
 	 * 

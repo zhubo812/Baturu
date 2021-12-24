@@ -21,6 +21,17 @@ public class FileWriter{
 	private String encoding;
 	private BufferedWriter writer;
 	
+	
+	public FileWriter(String dir, String filename,String encoding, boolean createDir){
+		File file = new File(dir);
+		if(!file.exists()){
+			file.mkdirs();
+		}
+		this.path = file.getAbsolutePath()+filename;
+		this.encoding = encoding;
+		getBuffWriter();
+	}
+	
 	public FileWriter(String path, String encoding){
 		this.path = path;
 		this.encoding = encoding;
