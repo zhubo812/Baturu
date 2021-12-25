@@ -1,0 +1,1 @@
+ update to Maven: mvn clean deploy -P release

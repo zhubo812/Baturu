@@ -35,7 +35,11 @@ public class FileReader {
 		file = new File(this.path);
 		getReader();
 	}
-	
+	/**
+	 * 
+	 * @param path
+	 *            文本的绝对路径 编码默认为UTF-8
+	 */
 	public FileReader(String path, String encoding) {
 		init(path);
 		file = new File(this.path);
