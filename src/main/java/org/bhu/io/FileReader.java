@@ -56,8 +56,8 @@ public class FileReader {
 	private void init(String path){
 		this.path = path;
 		try {
-//			this.encoding = getCode(path);
-			this.encoding = codeString(path);
+			this.encoding = getCode(path);
+//			this.encoding = codeString(path);
 		} catch ( Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -310,5 +310,13 @@ public class FileReader {
 			e.printStackTrace();
 		}
 	}
+	public String getEncoding() {
+		return encoding;
+	}
+	public void setEncoding(String encoding) {
+		this.encoding = encoding;
+	}
+	
+	
 	
 }
